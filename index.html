@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script type="module" src="script.js" defer></script>
+
+    <title>Drum Machine by Aberllin</title>
+  </head>
+  <body>
+    <div id="drum-machine">
+      <div class="buttons-container">
+        <button id="heater1" class="drum-pad">
+          Q
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+          ></audio>
+        </button>
+        <button id="heater2" class="drum-pad">
+          W
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+          ></audio>
+        </button>
+        <button id="heater3" class="drum-pad">
+          E
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+          ></audio>
+        </button>
+        <button id="heater4" class="drum-pad">
+          A
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
+          ></audio>
+        </button>
+        <button id="clap" class="drum-pad">
+          S
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+          ></audio>
+        </button>
+        <button id="open-HH" class="drum-pad">
+          D
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+          ></audio>
+        </button>
+        <button id="kick-n-hat" class="drum-pad">
+          Z
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+          ></audio>
+        </button>
+        <button id="kick" class="drum-pad">
+          X
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+          ></audio>
+        </button>
+        <button id="closed-hh" class="drum-pad">
+          C
+          <audio
+            src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+          ></audio>
+        </button>
+      </div>
+      <div id="panel">
+        <div class="power-container">
+          <div id="power-indicator">Power</div>
+          <input id="power-toggle" type="checkbox" />
+          <label for="power-toggle" class="power-switcher"></label>
+        </div>
+        <div id="display"></div>
+        <div class="volume-container">
+          <i class="fa fa-volume-up"></i>
+          <input
+            id="volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

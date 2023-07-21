@@ -1,0 +1,170 @@
+body {
+  height: 100vh;
+  background-image: url("./assets//gabriel-barletta--lWcaUVJ39Y-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 15px;
+  column-gap: 15px;
+}
+
+#panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#display {
+  width: 240px;
+  height: 50px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 49px 53px 44px -53px rgba(66, 68, 90, 1);
+
+  font-weight: bold;
+  color: #2b2d42;
+  font-size: 24px;
+
+  border-radius: 5px;
+  border: 2px solid rgba(66, 68, 90, 1);
+}
+
+#drum-machine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+  padding: 64px;
+  margin: 0 auto;
+  background: rgba(237, 242, 244, 0.8);
+  border-radius: 10px;
+  border: 5px solid #2b2d42;
+}
+
+.drum-pad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  width: 70px;
+  height: 70px;
+  background-color: #edf2f4;
+  color: #2b2d42;
+  font-weight: bold;
+  outline: none;
+  border: 2px solid rgba(66, 68, 90, 1);
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 8px 10px 28px -11px rgba(66, 68, 90, 1);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: inset 24px 27px 54px -19px rgba(66, 68, 90, 1);
+  }
+}
+
+#power-indicator {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.power-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* VOLUME RANGE */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+  color: -internal-light-dark(rgb(16, 16, 16), rgb(255, 255, 255));
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #2b2d42;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px 6px rgba(66, 68, 90, 0.7);
+  cursor: pointer;
+
+  transform: translateY(-40%);
+}
+
+.volume-container {
+  display: flex;
+  gap: 16px;
+  font-size: 26px;
+}
+
+/* POWER TOGGLE */
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label.power-switcher {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 45px;
+  background: #bada55;
+  box-shadow: inset 8px 8px 11px -7px rgba(66, 68, 90, 0.7);
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+label.power-switcher:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  width: 38px;
+  height: 38px;
+  background: #edf2f4;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label.power-switcher {
+  background: #edf2f4;
+}
+
+input:checked + label.power-switcher:after {
+  right: calc(100% - 7px);
+  transform: translateX(100%);
+  background-color: rgba(66, 68, 90, 1);
+}
